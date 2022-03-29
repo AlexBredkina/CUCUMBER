@@ -1,0 +1,703 @@
+@import vars
+@import mixins
+
+*
+    margin: 0
+    padding: 0
+    box-sizing: border-box
+
+body
+    font-family: 'Manrope', sans-serif
+    color: $colorMain
+
+.wrapper
+    min-height: 100%
+    overflow: hidden
+
+a
+    text-decoration: none
+    color: $colorMain
+
+    &:hover
+        color: $colorSelect
+
+.center
+    max-width: 1310px
+    margin: 0 auto
+    padding: 0 20px
+    box-sizing: content-box
+
+span
+    color: $colorSelect
+
+.text_bold
+    font-weight: 700
+
+.img__border-radius
+    border-radius: 10px
+
+.button
+    height: 48px
+    padding: 14px 20px 14px 20px
+    +font(14px, 500, $colorWhite)
+    background: #373736
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+    border-radius: 10px
+    border: 0
+    transition: 0.6s ease
+    display: inline-block
+
+    &:hover
+        background: $colorSelect
+        color: $colorWhite
+
+.header
+    padding-top: 48px
+    +flexSpaceBetween
+
+    &__left
+        +flexAlignItems
+        gap: 32px
+
+        &_nav
+            display: none
+
+    &__link
+        +text
+        color: $colorMain
+        display: block
+        margin-bottom: 32px
+
+        &:hover
+            color: $colorSelect
+
+    &__center
+        width: 496px
+        display: flex
+        +flexSpaceBetween
+
+        &_link
+            +font(16px, 500, $colorMain)
+            gap: 42px
+
+            &:hover
+                color: $colorSelect
+
+    &__phone
+        display: flex
+        align-items: flex-start
+        gap: 22px
+        +font(20px, 700, $colorMain)
+
+        & svg
+            margin-top: 3px
+
+    &__button
+        width: 100%
+        text-align: center
+        margin-top: 77px
+
+    &__right
+        display: flex
+        align-items: flex-start
+        gap: 22px
+
+        & svg
+            padding-top: 3px
+
+        &_phone
+            font-size: 20px
+            font-weight: 700
+            color: #373736
+
+#switcher
+    display: none
+
+    &:checked ~ .nav
+        left: 0
+
+.nav
+    display: block
+    position: fixed
+    top: 0
+    left: -100%
+    width: 100%
+    height: 100%
+    z-index: 999
+    margin: 0
+    padding: 80px 10px 0 10px
+    background-color: $colorWhite
+    transition-duration: .7s
+
+    &__open
+        +flexAlignItems
+        cursor: pointer
+
+    &__close
+        position: absolute
+        cursor: pointer
+        top: 50px
+        left: 22px
+
+.nav__open > .nav, .nav__open > .nav::before, .nav__open > .nav::after
+    display: block
+    position: absolute
+    width: 100%
+    height: 2px
+    background-color: $colorWhite
+    transition-duration: .7s
+
+.banner
+    display: flex
+    justify-content: space-between
+    padding-top: 64px
+
+    &__left
+        max-width: 640px
+        padding-top: 76px
+
+        & form
+            position: relative
+
+    &__h1
+        +font(35px, 800, '')
+        line-height: 48px
+        padding-bottom: 32px
+
+    &__heading
+        +font(20px, 700, 27px)
+        white-space: pre-line
+        padding-bottom: 64px
+
+    & input
+        width: 435px
+        height: 67px
+        border: 2px solid #A3A3A3
+        padding: 20px 20px
+        border-radius: 10px
+        font-size: 20px
+
+    &__button
+        position: absolute
+        left: 270px
+        bottom: 10px
+
+.company
+    +flexCenter
+    margin-top: 85px
+
+    &__text
+        +text
+        max-width: 467px
+        margin-top: 16px
+        margin-bottom: 120px
+
+.services
+    +flexCenter
+    position: relative
+    background: $colorMain
+    padding: 64px 185px 118px 185px
+    margin-bottom: 120px
+    box-shadow: 0 4px 15px 10px rgba(0, 0, 0, 0.1)
+    border-radius: 10px
+
+    &__text
+        +text
+        max-width: 687px
+        margin-top: 21px
+        color: $colorWhite
+
+    &__small
+        margin-top: 25px
+        width: 340px
+
+    &__heading
+        color: $colorWhite
+        margin-bottom: 32px
+        +h2
+
+    & .owl-carousel
+        padding-top: 67px
+
+    & .fa-arrow-right, & .fa-arrow-left
+        font-size: 16px
+        color: $colorWhite
+        position: absolute
+        cursor: pointer
+        top: 300px
+        transition: 0.6s ease
+        padding: 16px
+
+        &:hover
+            border-radius: 8px
+            background-color: #DCAD3A
+
+    & .fa-arrow-right
+        right: -56px
+
+    & .fa-arrow-left
+        left: -56px
+
+//&__slider
+//+flexAlignItems
+//gap: 32px
+//margin-top: 64px
+
+//&__blocks
+//    display: flex
+//    align-items: flex-start
+//    max-width: 1120px
+//    gap: 50px
+//
+//&__block
+//    +flexCenter
+//    min-height: 529px
+//
+//    & img
+//        border-radius: 10px
+//
+//& .previous, & .next
+//    +arrow
+//
+//    &:hover
+//        +arrow_hover
+
+
+.stage
+    +flexCenter
+    margin-top: 120px
+    margin-bottom: 138px
+
+    &__heading
+        +h2
+        margin-bottom: 63px
+
+.project
+    +flexCenter
+    padding-bottom: 120px
+    position: relative
+
+    &__slider
+        width: 50%
+
+    & #slide-two
+        max-width: 340px
+        height: auto
+
+    & .fa-arrow-right, & .fa-arrow-left
+        font-size: 16px
+        position: absolute
+        cursor: pointer
+        top: 200px
+        transition: 0.6s ease
+        padding: 16px
+
+        &:hover
+            border-radius: 8px
+            background-color: $colorSelect
+
+    & .fa-arrow-right
+        right: -56px
+
+    & .fa-arrow-left
+        left: -56px
+
+    &__heading
+        +h2
+        margin-bottom: 32px
+
+    &__text
+        +text
+        max-width: 687px
+        margin-top: 21px
+
+    &__cart
+        +flex
+        gap: 117px
+        margin-top: 64px
+
+    //&__blocks
+    //    +flexSpaceBetween
+    //    gap: 32px
+    //    max-width: 50%
+    //
+    //&__block
+    //    +flexCenter
+    //
+    //    & img
+    //        padding-bottom: 20px
+
+    &__info
+        max-width: 50%
+
+    &__price
+        +flex
+        flex-direction: column
+        align-items: flex-start
+
+    &__desc
+        max-width: 401px
+        margin-top: 40px
+        margin-bottom: 64px
+        +font(16px, 500, '')
+
+    //& .previous, & .next
+    //    +arrow
+    //
+    //    &:hover
+    //        +arrow_hover
+    //
+    //& .next
+    //    border-radius: 3px
+
+    &__box
+        +flex
+        gap: 20%
+
+    &__time
+        font-size: 35px
+        font-weight: 800
+
+
+.blog
+    +flexCenter
+    margin-top: 99px
+
+    &__heading
+        +h2
+        margin-bottom: 36px
+
+    &__text
+        +text
+        max-width: 680px
+
+    &__links
+        display: flex
+        align-items: center
+        font-weight: 500
+        //justify-content: space-around
+        gap: 64px
+        //max-width: 753px
+        margin-top: 80px
+        white-space: nowrap
+
+    &__block
+        +flex
+        max-width: 880px
+        flex-wrap: wrap
+        justify-content: space-between
+        padding-top: 77px
+        padding-bottom: 146px
+
+        & img
+            max-width: 100%
+    &__bg
+        display: none
+
+    &__article
+        +flex
+        cursor: pointer
+        flex-direction: column
+        padding: 20px
+        max-width: 48%
+        min-height: 514px
+
+        box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.2)
+        border-radius: 20px
+        background: #FFFFFF
+        color: $colorMain
+        margin-bottom: 25px
+
+    &__article_name
+        +font(16px, bold, 'red')
+        max-width: 380px
+        margin-top: 36px
+        margin-bottom: 36px
+
+
+.partners
+    height: 569px
+    background: $colorMain
+    padding: 61px 185px 51px 185px
+    margin-bottom: 120px
+
+    &__heading
+        color: $colorWhite
+        margin-bottom: 80px
+        +h2
+
+    &__logo
+        display: grid
+        grid-template-columns: repeat(4, 1fr)
+        grid-row-gap: 29px
+        justify-items: center
+
+        &__item
+            justify-self: center
+
+        &__item:nth-child(5)
+            grid-column: span 4
+            justify-self: center
+
+
+.feedback
+    &__heading
+        +h2
+
+    &__slider
+        padding-left: calc(50% - 586px)
+        padding-right: calc(50% - 586px)
+        +flexAlignItems
+        gap: 30px
+        padding-top: 100px
+
+    & .fa-arrow-right, & .fa-arrow-left
+        font-size: 16px
+        position: absolute
+        cursor: pointer
+        top: 200px
+        transition: 0.6s ease
+        padding: 16px
+
+        &:hover
+            border-radius: 8px
+            background-color: #DCAD3A
+
+    & .fa-arrow-right
+        right: -56px
+
+    & .fa-arrow-left
+        left: -56px
+
+    &__name
+        +font(20px, 700, '')
+
+    &__text
+        @extend .feedback__name
+        font-weight: 400
+        margin-top: 24px
+
+    &__block
+        background: $colorWhite2
+        box-shadow: 0 4px 20px 2px rgba(0, 0, 0, 0.1)
+        height: 100%
+        margin-top: 100px
+        margin-bottom: 30px
+        border-radius: 10px
+        padding: 30px
+        animation-name: fade
+        animation-duration: 1.5s
+
+    & #slide-three
+        padding-top: 20px
+
+.questions
+    margin-top: 101px
+
+    &__heading
+        +font(32px, 800, '')
+        margin-bottom: 66px
+
+    &__blocks
+        display: flex
+        gap: 9%
+
+    &__block
+        width: 33%
+
+    &__block details:not(:last-child)
+        margin-bottom: 50px
+
+    &__answer
+        +font(20px, 700, '')
+        line-height: 27px
+        margin-top: 24px
+
+    &__question
+        +flex
+        justify-content: space-between
+        cursor: pointer
+
+        &:hover, &:active
+            color: $colorSelect
+
+        &:after
+            content: '\002B'
+            +font(30px, 500, '$colorSelect')
+            line-height: 27px
+            margin-left: 76px
+
+    &__h2
+        +font(20px, 700, '')
+
+details[open]>.questions__question:after
+    content: '\2013'
+    +font(30px, 500, $colorSelect)
+    margin-left: 76px
+
+details[open]>.questions__question
+    color: $colorSelect
+
+@keyframes fade
+    from
+        opacity: 0.4
+    to
+        opacity: 1
+
+.article
+    margin-top: 100px
+
+    &__box
+        padding-left: 110px
+
+        & img
+            border-radius: 10px
+
+    &__back
+        font-size: 38px
+        cursor: pointer
+        transition: 0.6s ease
+        padding: 5px 16px 5px 16px
+        margin-left: -16px
+
+        &:hover
+            border-radius: 8px
+            background-color: #DCAD3A
+            color: $colorMain
+
+    &__heading
+        +font(32px, 800, '')
+        margin-top: 16px
+        margin-bottom: 48px
+        max-width: 90%
+
+        &_h2
+            +h2
+            text-align: left
+            margin-top: 40px
+            margin-bottom: 28px
+
+    &__text
+        +font(18px, 500, '')
+        line-height: 25px
+        max-width: 800px
+        white-space: pre-line
+
+        &:first-of-type
+            margin-top: 40px
+
+        &:last-child
+            margin-bottom: 10px
+
+.contacts
+    margin-top: 200px
+    +flex
+    gap: 200px
+
+    &__heading
+        +font(20px, 700, '')
+        line-height: 27px
+        margin-bottom: 18px
+
+    &__text
+        +font(32px, 800, '')
+        line-height: 43px
+        white-space: pre-line
+
+        &:not(last-child)
+            margin-bottom: 34px
+
+.footer
+    margin-top: 541px
+    padding-bottom: 60px
+    position: relative
+    min-height: 565px
+    background-color: $colorMain
+
+    &__block
+        display: flex
+        justify-content: space-between
+
+    &__subscribe
+        position: absolute
+        width: 440px
+        height: 459px
+        border-radius: 20px
+        padding: 69px 86px 74px 32px
+        top: -250px
+        background: $colorMain
+        filter: drop-shadow(0px 4px 9px rgba(0, 0, 0, 0.1))
+
+        &_logo
+            position: absolute
+            z-index: 999
+            bottom: 315px
+            left: 380px
+
+        & input
+            width: 100%
+            color: $colorGrey1
+            background: none
+            border: none
+            font-weight: 500
+            font-size: 16px
+            line-height: 41px
+            border-bottom: 2px solid $colorGrey1
+
+            &:not(:last-of-type)
+                margin-bottom: 37px
+
+            &:focus
+                outline: 0
+
+            &::placeholder
+                color: $colorGrey1
+
+        &__button
+            background: $colorWhite
+            color: $colorMain
+            display: inline-block
+            margin-top: 63px
+            margin-bottom: 24px
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)
+
+        &_text
+            +font(16px, 500, $colorGrey1)
+            line-height: 22px
+
+    &__left
+        display: flex
+        width: 50%
+        flex-direction: column
+        margin-top: 287px
+
+        &_nav
+            display: grid
+            grid-template-columns: 1fr 1fr 1fr
+            grid-row-gap: 32px
+
+        &_link
+            +font(20px, 700, $colorWhite)
+            line-height: 27px
+
+        &_bottom
+            display: flex
+            gap: 33px
+            margin-top: 110px
+
+            & a, & p
+                +font(16px, 500, $colorWhite)
+
+    &__right
+        & img
+            margin-top: 149px
+
+        &_text
+            +font(20px, 500, $colorWhite)
+            margin-top: 40px
+            margin-bottom: 18px
+
+        &_phone
+            +font(35px, 800, $colorWhite)
+
+@import _mobile.sass

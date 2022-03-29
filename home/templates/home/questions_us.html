@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% load static wagtailcore_tags%}
+
+{% block body_class %}template-homepage{% endblock %}
+
+{% block extra_css %}
+
+
+
+{% endblock extra_css %}
+
+{% block content %}
+<section class="questions center">
+  <h1 class="questions__heading">{{ page.title }}</h1>
+  <div class="questions__blocks">
+ <div class="questions__block">
+{% for block in page.body %}
+
+  {% if forloop.counter0 == is_middle %}
+  </div>
+    <div class="questions__block">
+{% endif %}
+<details>
+      <summary class="questions__question">
+        <h2 class="questions__h2">{{ block.value.question }}</h2>
+        </summary>
+        <h2 class="questions__answer">{{ block.value.answer }}</h2>
+
+    </details>
+ {% endfor %}
+  </div>
+  </div>
+</section>
+ {% endblock content %}

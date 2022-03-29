@@ -1,0 +1,332 @@
+@import vars
+@import mixins
+
+@media (max-width: 1023px)
+    .header
+        padding-top: 24px
+
+        &__center
+            display: none
+
+        &__left_nav
+            display: block
+
+    .article__box
+        padding-left: 0
+
+    .footer
+        padding-bottom: 32px
+
+@media (max-width: 860px)
+    .blog
+        &__article
+            & img
+                max-width: 100%
+                //width: 308px
+                height: 320px
+                object-fit: cover
+                border-radius: 10px
+                align-self: center
+
+    .footer
+        & img
+            width: 245px
+            margin-top: 253px
+
+        &__right
+            &_text
+                font-size: 16px
+                font-weight: 400
+                margin-top: 24px
+                margin-bottom: 16px
+
+            &_phone
+                font-size: 20px
+                font-weight: 700
+
+        &__left
+            width: 60%
+            &_bottom
+                margin-top: 100px
+
+@media (max-width: 768px)
+    .button
+        padding: 14px 20px 14px 20px
+        font-size: 14px
+
+    .questions
+        margin-top: 72px
+
+        &__heading
+            line-height: 32px
+
+        &__block
+            width: 420px
+
+        &__blocks
+            flex-direction: column
+            gap: 50px
+
+    .blog
+        &__links
+            gap: 40px
+
+        &__article
+            margin-bottom: 40px
+
+        &__block
+            padding-left: 27px
+            padding-right: 27px
+            padding-bottom: 0
+
+    .article
+        margin-top: 57px
+
+        &__heading
+            +font(30px, 800, '')
+            line-height: 40px
+            width: 100%
+
+            &_h2
+                +font(30px, 800, '')
+
+        &__text
+            +font(16px, 400, '')
+            max-width: 479px
+
+            &:last-child
+                margin-bottom: 0
+
+    .footer
+        &__subscribe
+            &_text, & input
+                font-weight: 400
+            & input:not(:last-of-type)
+                margin-bottom: 32px
+
+
+@media (max-width: 680px)
+    .blog
+        &__links
+            position: relative
+            width: 100%
+            height: 35px
+            margin-top: 64px
+            margin-left: 20px
+            justify-content: flex-start
+            overflow-x: auto
+            scroll-snap-type: x mandatory
+
+        &::-webkit-scrollbar
+            width: 0
+
+        &__bg
+            display: block
+            background: linear-gradient(to right, transparent, #fff 100%)
+            width: 130px
+            height: 30px
+            right: 0
+            top: 0
+            z-index: 1
+            position: absolute
+
+    .footer
+        &__block
+            flex-direction: column
+
+        &__left
+            width: 100%
+
+            &__bottom
+                margin-top: 48px
+
+        & img
+            margin-top: 40px
+
+@media (max-width: 520px)
+    .header__left
+        width: 100%
+        justify-content: space-between
+
+    .header__right
+        display: none
+
+    .questions
+        margin-top: 48px
+
+        &__heading
+            font-size: 24px
+            line-height: 32px
+            margin-bottom: 64px
+
+        &__h2
+            font-size: 14px
+            font-weight: 500
+            line-height: 19px
+
+        &__block
+            & details:not(:last-child)
+                margin-bottom: 32px
+
+        &__blocks
+            gap: 32px
+
+        &__answer
+            font-size: 16px
+            line-height: 21px
+            margin-top: 16px
+
+        &__question:after
+            +font(24px, 500, '$colorSelect')
+            line-height: 20px
+            margin-left: 76px
+
+
+    details[open]>.questions__question:after
+        +font(20px, 500, $colorSelect)
+        margin-left: 76px
+
+    .blog
+        margin-top: 68px
+
+        &__article
+            max-width: 270px
+            & img
+                max-width: 100%
+                width: 230px
+                height: 300px
+                object-fit: cover
+
+            &:not(:last-of-type)
+                margin-bottom: 32px
+
+        &__heading
+            font-size: 24px
+
+        &__links
+            gap: 32px
+
+        &__text, &__article_name, &__link
+            +text_mob
+
+        &__date
+            font-size: 12px
+
+        &__block
+            justify-content: center
+            padding-top: 40px
+
+
+    .article
+        margin-top: 53px
+
+        &__box
+            padding-left: 0
+
+        &__heading
+            font-size: 24px
+            line-height: 32px
+            margin-top: 16px
+            max-width: 100%
+
+            &_h2
+                font-weight: 700
+                font-size: 16px
+                line-height: 21px
+
+        &__text
+            font-size: 14px
+            line-height: 19px
+            max-width: 100%
+            font-weight: 500
+
+    .footer
+        margin-top: 228px
+        padding-top: 200px
+        padding-bottom: 42px
+
+        &__subscribe
+            left: 3%
+            right: 3%
+            top: -28px
+            width: 94%
+            padding: 64px 32px 74px 32px
+
+            &__button
+                margin-top: 40px
+
+            &_input, &_text
+                font-size: 12px
+
+            &_logo
+                height: 40%
+                left: 60%
+                bottom: 380px
+
+            & input:not(:last-of-type)
+                margin-bottom: 37px
+
+        &__block
+            flex-direction: column
+
+        &__left
+            width: 100%
+
+            &_nav
+                display: grid
+                grid-template-columns: 1fr 1fr
+
+            &_bottom
+                margin-top: 48px
+                display: block
+
+        &__right
+            & svg
+                margin-top: 40px
+                max-width: 70%
+
+            &_text
+                margin-top: 24px
+
+            &_phone
+                font-size: 16px
+
+@media (max-width: 460px)
+    .questions
+        &__block
+            width: 100%
+
+        &__heading
+            text-align: center
+
+@media (max-width: 320px)
+    .button
+        padding: 16px 20px 16px 20px
+        font-size: 12px
+
+    .footer
+        & img
+            width: 185px
+        &__left
+            &_link
+                font-size: 14px
+                font-weight: 500
+                line-height: 19px
+
+            &_nav
+                grid-row-gap: 14px
+
+            &_bottom a
+                font-size: 10px
+                font-weight: 400
+
+            &_bottom p
+                font-size: 10px
+                font-weight: 400
+                margin-top: 14px
+
+        &__right_text
+            font-weight: 700
+            margin-bottom: 14px
+
+@import mixins
